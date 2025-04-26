@@ -1,0 +1,160 @@
+@charset "UTF-8"; 
+/*⬆️日本語などの文字が文字化けしないように念のため記述*/
+
+html {
+  font-size: 100%;
+/*⬆️remを使ったレスポンシブなデザインがしやすくなる
+  ユーザーのブラウザ設定に従った文字サイズを基準にするため
+  （1rem = 16px）*/
+}
+body {
+  color: #383e45;
+  font-size: 0.9rem;
+/*⬆️0.9rem = 14.4px*/  
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+.site-title {
+  width: 120px;
+  line-height: 1px;
+  padding: 10px 0;
+}
+.site-title a {
+  display: block;
+/*⬆️リンク全体をターゲットとして使いたいかつ
+  ブロック要素にするため*/
+}
+.section-title {
+  display: inline-block;
+/*⬆️h2はブロック要素だから幅いっぱいに線が引かれるため、インライン要素にする*/
+  font-size: 2rem;
+  margin-bottom: 60px;
+  border-bottom: solid 1px #383e45;
+}
+.content-title {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 100px;
+/*⬆️ボックス外の「上に余白なし、下に100pxのスペース、横は真ん中揃え」*/
+  padding: 0 4%;
+/*⬆️ボックス内のテキストや要素が左右に少し寄らずに余裕を持って配置*/
+  text-align: center;
+}
+
+/*-------------------------------------------------
+  ヘッダー
+-------------------------------------------------*/
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+#header ul {
+  display: flex;
+  padding: 10px 0;
+/*⬆️ナビゲーションに少し高さを持たせて、窮屈に見えないようにすることと
+  ボタンやリンクがタッチしやすくするため*/
+}
+#header li {
+  margin-left: 30px;
+}
+#header li a {
+  color: #24292e;
+}
+#header li a:hover {
+  opacity: 0.7;
+}
+/*-------------------------------------------------
+  Mainvisual
+-------------------------------------------------*/
+#mainvisual {
+  margin-bottom: 80px;
+}
+#mainvisual img {
+  width: 100%; /*レスポンシブ対応*/
+  max-width: 1920px; /*一般的なフルHD（Full HD）ディスプレイの横幅*/
+  height: 600px;
+  object-fit: cover;
+}
+/*-------------------------------------------------
+  About
+-------------------------------------------------*/
+#about .content {
+  display: flex;
+  justify-content: center; /*横方向（主軸）に要素を中央揃え*/
+  align-items: center; /*縦方向（交差軸）に要素を中央揃え*/
+}
+#about img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+#about .text {
+  text-align: left;
+}
+/*-------------------------------------------------
+  Bicycle
+-------------------------------------------------*/
+#bicycle ul {
+  display: flex;
+  justify-content: space-between;
+}
+#bicycle li {
+  width: 32%; /*100% ÷ 3 = 約33.3% 余白を考慮して32%*/
+}
+/*-------------------------------------------------
+  footer
+-------------------------------------------------*/
+#footer {
+  font-size: 0.5rem;
+  padding: 10px 0;
+  text-align: center;
+}
+/*-------------------------------------------------
+  SP
+-------------------------------------------------*/
+@media screen and (max-width: 600px) {
+
+  /*-----------------------------------------------
+    Mainvisual
+  -----------------------------------------------*/
+  #mainvisual img {
+    height: calc(100vh - 60px);
+  }
+
+  /*-----------------------------------------------
+    About
+  -----------------------------------------------*/
+  #about .content {
+    flex-direction: column;
+    /*⬆️もともと display: flex が指定されていて、横並び（row）だったのを、縦並びに変更*/
+  }
+  #about img {
+    margin-right: 0;
+    /*⬆️PC表示のときに margin-right をつけて画像とテキストの間に横の余白をつけてたが
+      スマホでは縦並びになるから、右の余白は不要 → 0にする*/
+  }
+
+  /*-----------------------------------------------
+    Bicycle
+  -----------------------------------------------*/
+  #bicycle ul {
+    flex-direction: column;
+  }
+  #bicycle li {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
