@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>PHOTO BOOK</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header id="header">
+        <!--ロゴをh1タグで囲うことが多い。h1は、そのページで一番重要な見出しを表すタグだから-->
+        <h1 class="site-title">
+          <a href="index.html"><img src="img/logo.svg" alt="PHOTO BOOK"></a>
+        </h1>
+      </header>
+
+      <main>
+        <div id="mainvisual">
+          <img src="img/mainvisual.jpg" alt="メインビジュアル">
+        </div>
+
+        <!--⬇️sectionはあくまで意味のまとまり、divは見た目のための箱
+            section + div → さらに細かいレイアウト・デザインができる。現場ではほぼこれ。-->
+        <section id="index">
+          <div class="inner">
+            <h2 class="section-title">INDEX</h2>
+            <!--⬇️番号付きのリスト、ol、liタグを使用。ちなみに、順序性のない箇条書きの場合は、ul、liタグを使用。-->
+            <ol class="index-list"> 
+              <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+              <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+              <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+              <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+              <li>タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="detail">
+          <div class="inner">
+            <h2 class="section-title">DETAIL</h2>
+            <div class="content">
+              <img src="img/detail.jpg" alt="写真１">
+              <div class="text">
+                <p class="title">タイトルタイトルタイトル</p>
+                <dl>
+                  <dt>著者</dt>
+                  <dd>タイトルタイトルタイトル</dd>
+                  <dt>出版社</dt>
+                  <dd>タイトルタイトルタイトル</dd>
+                  <dt>発行年</dt>
+                  <dd>タイトルタイトルタイトル</dd>
+                </dl>
+                <p>
+                  テキストテキストテキストテキストテキストテキスト
+                  テキストテキストテキストテキストテキストテキスト
+                </p>
+                <a class="link" href="#" target="_blank" rel="noopener noreferrer">オンラインストアで見る</a>
+                <!--⬆️リンクをクリックすると新しいタブで開く、セキュリティ対策用。新しいタブで開いた時に、元ページの情報を悪用されないようにする-->
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="footer">
+        <p>&copy; 2020 PHOTO BOOK</p>
+      </footer>
+    </div>
+  </body>
+</html>
