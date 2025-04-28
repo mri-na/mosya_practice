@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  background-color: #FFFFFF;
+  color: #333333;
+  font-size: 0.875rem; /*pタグの文字サイズ*/
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.section-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/*------------------------------------------------
+  ヘッダー
+------------------------------------------------*/
+#header {
+  /*ページ全体のヘッダーに関する「外枠」「大枠」の調整*/
+  margin-top: 60px;
+}
+#header .site-title {
+  width: 180px;
+  line-height: 0;
+  margin-bottom: 15px;
+}
+#header .site-title a {
+  display: block;
+}
+
+/*------------------------------------------------
+  Mainvisual
+------------------------------------------------*/
+#mainvisual {
+  margin-bottom: 60px;
+}
+
+/*------------------------------------------------
+  Index
+------------------------------------------------*/
+#index {
+  background-color: #F5F5F5;
+  padding: 60px;
+  margin-bottom: 60px;
+}
+#index .index-inner {
+  border: solid 1px #333333;
+  padding: 30px;
+}
+#index .index-inner .index-list {
+  display: table;
+  margin: 0 auto;
+/*⬆️「display: table;」と「margin: 0 auto;」で中央に配置。
+※この方法を使うとテキストの長さに応じて可変で中央配置できる*/
+}
+#index .index-inner .index-list li {
+  margin-bottom: 20px;
+}
+#index .index-inner .index-list li:last-child {
+  margin-bottom: 0;
+}
+
+/*------------------------------------------------
+  Image
+------------------------------------------------*/
+.list {
+  display: flex;
+  flex-wrap: wrap; /*改行あり*/
+  justify-content: space-between; /*両端揃えで均等に配置*/
+  margin-bottom: 45px;
+}
+.list li {
+  width: 49%;
+  margin-bottom: 15px;
+}
+.list li img {
+  vertical-align: bottom;
+/*⬆️リストの中の画像を、行の一番下に揃える。画像はインライン要素扱いだから、
+  何もしないと少し上に浮いたように見える場合があるため。*/
+}
+
+/*------------------------------------------------
+  Detail
+------------------------------------------------*/
+#detail {
+  background-color: #F5F5F5;
+  padding: 60px;
+  margin-bottom: 60px;
+}
+#detail .flex {
+  display: flex;
+}
+#detail dl {
+  width: 35%;
+  border-right: solid 1px #333333;
+  padding-right: 40px;
+}
+#detail dt {
+  font-weight: bold;
+}
+#detail dd {
+  margin-bottom: 10px;
+}
+#detail dd:last-child {
+  margin-bottom: 0;
+}
+#detail .text {
+  width: 56%;
+  padding-left: 40px;
+}
+#detail .text p {
+  margin-bottom: 20px;
+}
+#detail .text .link {
+  color: #333333;
+}
+#detail .text .link:hover {
+  opacity: 0.8;
+}
+/*------------------------------------------------
+  フッター
+------------------------------------------------*/
+#footer {
+  font-size: 0.625rem;
+  padding: 15px 0;
+  text-align: center;
+}
+
+/*------------------------------------------------
+  SP
+------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .inner {
+    padding: 0 20px;
+  }
+
+  /*----------------------------------------------
+    ヘッダー
+  ----------------------------------------------*/
+  #header {
+    padding: 0 10px;
+  }
+
+  /*----------------------------------------------
+    Index
+  ----------------------------------------------*/
+  #index {
+    padding: 40px 20px;
+  }
+
+  /*----------------------------------------------
+    Media
+  ----------------------------------------------*/
+  .list {
+    flex-direction: column;
+  }
+  .list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  /*----------------------------------------------
+    Detail
+  ----------------------------------------------*/
+  #detail {
+    padding: 40px 20px;
+  }
+  #detail .flex {
+    flex-direction: column;
+  }
+  #detail dl {
+    width: 100%;
+    border-right: none;
+    border-bottom: solid 1px #333333;
+    padding-bottom: 40px;
+  }
+  #detail .text {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 40px;
+  }
+}
